@@ -10,7 +10,7 @@
     --gris-2: #828282;
 }
 
-body {
+body{
     background-color: var(--blanco)!important;
     font-family: 'Montserrat', sans-serif !important;
     color: var(--negro)!important;
@@ -46,20 +46,7 @@ a {
     color: var(--naranja);
 }
 
-/*Imagenes*/
 
-.logo {
-    height: auto;
-    width: 50%;
-}
-
-.foto-log {
-    
-    height: 100%;
-}
-.img-log {
-    
-}
 .centrar {
     display: flex;
     justify-content: center;

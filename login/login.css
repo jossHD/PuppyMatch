@@ -1,0 +1,28 @@
+/*Imagenes*/
+
+.logo {
+    height: auto;
+    width: 30%;
+}
+
+.img-log {
+    background-image: url("https://cdn.abril.pe/abril-inmobiliaria/image/2021/05/como-cuidar-a-tu-mascota-1024x576.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 44rem;
+}
+.img-reg {
+    background-image: url("https://www.bbva.com/wp-content/uploads/2019/03/mascota-seguro-obligatorio-bbva-recurso-1024x608.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 44rem;
+}
+.img-form {
+    background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.97), rgba(255, 255, 255, 0.97)), url("https://static.vecteezy.com/system/resources/previews/003/193/573/non_2x/seamless-pattern-with-bones-and-paw-prints-of-animals-free-vector.jpg");
+    background-position: center;
+    background-repeat: repeat ;
+    background-size: 25%;
+    
+}
