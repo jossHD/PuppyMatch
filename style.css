@@ -13,7 +13,55 @@
 body {
     background-color: var(--blanco)!important;
     font-family: 'Montserrat', sans-serif !important;
+    color: var(--negro)!important;
 }
 a {
     text-decoration: none!important;
+}
+
+/*Botones*/
+.btn-primario {
+    background-color: var(--amarillo)!important;
+    padding: 10px 50px!important;
+    color: var(--blanco)!important;
+    font-weight: 700!important;
+    border-radius: 44px!important;
+}
+
+.btn-secundario {
+    background-color: var(--blanco)!important;
+    padding: 10px 50px!important;
+    color: var(--naranja)!important;
+    font-weight: 700!important;
+    border: 2px solid var(--naranja)!important;
+    border-radius: 44px!important;
+}
+
+/*Textos*/
+.h4 {
+    font-weight: 700!important;
+}
+.form-label{
+    font-weight: 700;
+    color: var(--naranja);
+}
+
+/*Imagenes*/
+
+.logo {
+    height: auto;
+    width: 50%;
+}
+
+.foto-log {
+    
+    height: 100%;
+}
+.img-log {
+    
+}
+.centrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
