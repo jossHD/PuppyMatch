@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+    --blanco: #FDFDFD;
+    --negro: #1A1A1A;
+    --verde: #318B93;
+    --naranja: #E5553A;
+    --amarillo: #EF9E33;
+    --gris-1: #f7f7ff; 
+    --gris-2: #828282;
+    --blanco1:#ffffff;
+
+}
+
+body {
+    background-color: var(--blanco)!important;
+    font-family: 'Montserrat', sans-serif !important;
+    color: var(--negro)!important;
+    padding-top: 60px;
+}
+a {
+    text-decoration: none!important;
+}
+ol,
+ul {
+  padding-left: 0rem !important;
+}
+
+/*Botones*/
+.btn-primario {
+    background-color: var(--amarillo)!important;
+    padding: 10px 50px!important;
+    color: var(--blanco)!important;
+    font-weight: 700!important;
+    border-radius: 44px!important;
+}
+
+.btn-secundario {
+    background-color: var(--blanco)!important;
+    padding: 10px 50px!important;
+    color: var(--naranja)!important;
+    font-weight: 700!important;
+    border: 2px solid var(--naranja)!important;
+    border-radius: 44px!important;
+}
+
+/*Textos*/
+.h4 {
+    font-weight: 700!important;
+}
+.form-label{
+    font-weight: 700;
+    color: var(--naranja);
+}
+
+.centrar{
+   width: 800px;
+   height: 600px;
+   background: var(--blanco1);
+   margin-top: 130px;
+   padding-top: auto;
+   padding-left: 30px;
+   padding-right: 30px;
+   margin: 30px;
+   border-radius: 10px;
+   box-shadow: 0px 0px 30px rgba(168, 168, 168, 0.15);
+}
+/*Estilos de las cards*/
+.col .card{
+    border-radius: 10px;
+    width: 200px;
+    height: 250px;
+   
+}
+.card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    backface-visibility: hidden;
+    transition: 0.3s;
+}
+.card .front {
+    transform: perspective(600px) rotate(0deg);
+    box-shadow: 0 5px 10px #000;
+}
+.card .front img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
