@@ -18,6 +18,10 @@ body{
 a {
     text-decoration: none!important;
 }
+ol,
+ul {
+  padding-left: 0rem !important;
+}
 
 /*Botones*/
 .btn-primario {
