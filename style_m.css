@@ -49,45 +49,7 @@ ul {
     font-weight: 700!important;
 }
 .form-label{
-    font-weight: 700;
+font-weight: 700!important;
     color: var(--naranja);
 }
 
-.centrar{
-   width: 800px;
-   height: 600px;
-   background: var(--blanco1);
-   margin-top: 130px;
-   padding-top: auto;
-   padding-left: 30px;
-   padding-right: 30px;
-   margin: 30px;
-   border-radius: 10px;
-   box-shadow: 0px 0px 30px rgba(168, 168, 168, 0.15);
-}
-/*Estilos de las cards*/
-.col .card{
-    border-radius: 10px;
-    width: 200px;
-    height: 250px;
-   
-}
-.card .face {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    overflow: hidden;
-    backface-visibility: hidden;
-    transition: 0.3s;
-}
-.card .front {
-    transform: perspective(600px) rotate(0deg);
-    box-shadow: 0 5px 10px #000;
-}
-.card .front img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}

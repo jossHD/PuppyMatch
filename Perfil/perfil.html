@@ -67,87 +67,91 @@
     </ul>
   </div>
  <section class="perfil-section">
-  <div class="container">
-    <form class="row g-3 needs-validation justify-content-md-center" novalidate>
+  <div class="perfil">
+    <div class="titulos"> Mi Perfil</div>
+      <form class="row g-3 needs-validation justify-content-md-center" novalidate>
+        <div class="col-sm">
+         <div class="col-md-10">
+          <div class="profile-pic-div">
+            <img src="../assets/user.jpg" id="photo">
+            <input type="file" id="file">
+            <label for="file" id="uploadBtn">Editar foto</label>
+          </div>
+        </div> 
+        </div>
+        <div class="col-sm ">
+        <div class="col-md-10 pb-2">
+          <label for="validationCustom01" class="form-label">Nombres:</label>
+          <input type="text" class="form-control" id="validationCustom01" value="" required>
+          <div class="valid-feedback">
+            correcto!
+          </div>
+          <div class="invalid-feedback">
+            Ingrese su nombre
+          </div>
+        </div>
+        <div class="col-md-10 pb-2">
+          <label for="validationCustom02" class="form-label">Apellidos:</label>
+          <input type="text" class="form-control" id="validationCustom02" value="" required>
+          <div class="valid-feedback">
+            Correcto!
+          </div>
+          <div class="invalid-feedback">
+            Ingrese sus apellidos
+          </div>
+        </div>
+        <div class="col-md-10 pb-2">
+          <label for="validationCustom03" class="form-label">Teléfono:</label>
+          <input type="tel" class="form-control" id="validationCustom03" >
+        </div>
+        <div class="col-md-10 pb-2">              
+          <label for="validationCustom04" class="form-label">Correo:</label>
+          <input type="email" class="form-control" id="validationCustom04" value="" required>
+          <div class="valid-feedback">
+            Correcto!
+          </div>
+          <div class="invalid-feedback">
+            Ingrese un correo valido
+          </div>
+        </div>
+        <div class="col-md-10 pb-2">
+          <label for="validationCustom05" class="form-label">Contraseña:</label>
+          <input type="password" class="form-control" id="validationCustom05" value="" required>
+          <div class="valid-feedback">
+            Correcto!
+          </div>
+          <div class="invalid-feedback">
+            Contraseña incorrecta
+          </div>
+        </div>
+      </div>
       <div class="col-sm">
-        <div class="titulo"> Mi Perfil</div>
-        <div class="profile-pic-div">
-          <img src="../assets/user.jpg" id="photo">
-          <input type="file" id="file">
-          <label for="file" id="uploadBtn">Editar foto</label>
+        <div class="col-md-10 pb-2">
+          <label for="validationCustom07" class="form-label">Dirección:</label>
+          <input type="text" class="form-control" id="validationCustom07" value="" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-10 pb-2">
+          <label for="validationCustom07" class="form-label">Acerca de mi:</label>
+            <textarea class="form-control" id="validationCustom07" rows="4"></textarea>
+        </div>
+        <div class="col-md-10 pb-4">
+        </div>
+        <div class="col-10  text-center ">
+          <button class="btn btn-primario" type="submit">Guardar</button>
         </div>
       </div>
-      <div class="col-sm ">
-      <div class="col-md-10 pb-2">
-        <label for="validationCustom01" class="form-label">Nombres:</label>
-        <input type="text" class="form-control" id="validationCustom01" value="" required>
-        <div class="valid-feedback">
-          correcto!
-        </div>
-        <div class="invalid-feedback">
-          Ingrese su nombre
-        </div>
-      </div>
-      <div class="col-md-10 pb-2">
-        <label for="validationCustom02" class="form-label">Apellidos:</label>
-        <input type="text" class="form-control" id="validationCustom02" value="" required>
-        <div class="valid-feedback">
-          Correcto!
-        </div>
-        <div class="invalid-feedback">
-          Ingrese sus apellidos
-        </div>
-      </div>
-      <div class="col-md-10 pb-2">
-        <label for="validationCustom03" class="form-label">Teléfono:</label>
-        <input type="tel" class="form-control" id="validationCustom03" >
-      </div>
-      <div class="col-md-10 pb-2">              
-        <label for="validationCustom04" class="form-label">Correo:</label>
-        <input type="email" class="form-control" id="validationCustom04" value="" required>
-        <div class="valid-feedback">
-          Correcto!
-        </div>
-        <div class="invalid-feedback">
-          Ingrese un correo valido
-        </div>
-      </div>
-      <div class="col-md-10 pb-2">
-        <label for="validationCustom05" class="form-label">Contraseña:</label>
-        <input type="password" class="form-control" id="validationCustom05" value="" required>
-        <div class="valid-feedback">
-          Correcto!
-        </div>
-        <div class="invalid-feedback">
-          Contraseña incorrecta
-        </div>
-      </div>
+      </form>
     </div>
-    <div class="col-sm">
-      <div class="col-md-10 pb-2">
-        <label for="validationCustom07" class="form-label">Dirección:</label>
-        <input type="text" class="form-control" id="validationCustom07" value="1234 Main St" required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-      </div>
-      <div class="col-md-10 pb-2">
-        <label for="validationCustom07" class="form-label">Acerca de mi:</label>
-          <textarea class="form-control" id="validationCustom07" rows="4"></textarea>
-      </div>
-      <div class="col-md-10 pb-4">
-      </div>
-      <div class="col-10  text-center ">
-        <button class="btn btn-primario" type="submit">Guardar</button>
-      </div>
-    </div>
-    </form>
+
+</section> 
 
       <footer>
 
       </footer>  
     <script src="perfil.js"></script> 
-    <script src="../home/home.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
     </script>
 </body>
