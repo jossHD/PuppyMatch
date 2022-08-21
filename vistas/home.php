@@ -5,8 +5,8 @@
 <head>
   <meta charset="UTF-8" />
   <title>PuppyMatch</title>
-  <link rel="stylesheet" href="home.css" />
-  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../style/home.css" />
+  <link rel="stylesheet" href="../style/style.css" />
   <!-- Boxicons CDN Link -->
   <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -33,28 +33,28 @@
         <span class="tooltip">Buscar</span>
       </li>
       <li>
-        <a href="#">
+        <a href="home.php">
           <i class="bx bx-heart"></i>
           <span class="links_name">Match</span>
         </a>
         <span class="tooltip">Match</span>
       </li>
       <li>
-        <a href="#">
+        <a href="mascotas_guardadas.php">
           <i class="bx bx-bookmark-heart"></i>
           <span class="links_name">Guardados</span>
         </a>
         <span class="tooltip">Guardados</span>
       </li>
       <li>
-        <a href="#">
+        <a href="mascota.php">
           <i class="bx bxs-dog"></i>
           <span class="links_name">Mis Mascotas</span>
         </a>
         <span class="tooltip">Mis Mascotas</span>
       </li>
       <li>
-        <a href="#">
+        <a href="perfil.php">
           <i class="bx bx-cog"></i>
           <span class="links_name">Configuración</span>
         </a>
@@ -259,7 +259,7 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js">
   </script>
-  <script src="home.js"></script>
+  <script src="../scripts/home.js"></script>
 </body>
 
 </html>

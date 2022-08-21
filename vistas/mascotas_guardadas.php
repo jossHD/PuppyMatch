@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="mascota.css">
-    <link rel="stylesheet" href="../style_m.css">
+    <link rel="stylesheet" href="../style/mascota.css">
+    <link rel="stylesheet" href="../style/style_m.css">
     <title>Puppy Match</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <!-- Boxicons CDN Link -->
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css" />
+
 </head>
 <body>
   <div class="sidebar">
@@ -21,49 +26,51 @@
     </div>
     <ul class="nav-list">
       <li>
-          <i class='bx bx-search' ></i>
-         <input type="text" placeholder="Search...">
-         <span class="tooltip">Buscar</span>
+        <i class="bx bx-search"></i>
+        <input type="text" placeholder="Search..." />
+        <span class="tooltip">Buscar</span>
       </li>
       <li>
-        <a href="#">
-          <i class='bx bx-heart'></i>
+        <a href="home.php">
+          <i class="bx bx-heart"></i>
           <span class="links_name">Match</span>
         </a>
-         <span class="tooltip">Match</span>
+        <span class="tooltip">Match</span>
       </li>
       <li>
-       <a href="#">
-         <i class='bx bx-bookmark-heart' ></i>
-         <span class="links_name">Guardados</span>
-       </a>
-       <span class="tooltip">Guardados</span>
-     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-home-heart' ></i>
-         <span class="links_name">Mis Mascotas</span>
-       </a>
-       <span class="tooltip">Mis Mascotas</span>
-     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-cog' ></i>
-         <span class="links_name">Configuración</span>
-       </a>
-       <span class="tooltip">Configuración</span>
-     </li>
-     <li class="profile">
-         <div class="profile-details">
-           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Woman_1.jpg/768px-Woman_1.jpg" alt="profileImg">
-           <div class="name_job">
-             <div class="name">María Garcia</div>
-             <div class="job"></div>
-           </div>
-         </div>
-         
-         <i class='bx bx-log-out' id="log_out" ></i>
-     </li>
+        <a href="mascotas_guardadas.php">
+          <i class="bx bx-bookmark-heart"></i>
+          <span class="links_name">Guardados</span>
+        </a>
+        <span class="tooltip">Guardados</span>
+      </li>
+      <li>
+        <a href="mascota.php">
+          <i class="bx bxs-dog"></i>
+          <span class="links_name">Mis Mascotas</span>
+        </a>
+        <span class="tooltip">Mis Mascotas</span>
+      </li>
+      <li>
+        <a href="perfil.php">
+          <i class="bx bx-cog"></i>
+          <span class="links_name">Configuración</span>
+        </a>
+        <span class="tooltip">Configuración</span>
+      </li>
+      <li class="profile">
+        <div class="profile-details">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Woman_1.jpg/768px-Woman_1.jpg"
+            alt="profileImg" />
+          <div class="name_job">
+            <div class="name">María Garcia</div>
+            <div class="job"></div>
+          </div>
+        </div>
+        <button class="btn" type="submit">
+          <i class="bx bx-log-out" id="log_out"> </i>
+        </button>
+      </li>
     </ul>
   </div>
  <section class="mascotas-section">
@@ -150,6 +157,6 @@
       <footer>
 
       </footer>  
-    <script src="mascota.js"></script> 
+    <script src="../scripts/mascota.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
     </script>
