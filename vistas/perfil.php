@@ -1,3 +1,32 @@
+<?php
+require '../config/config.php';
+require '../config/database.php';
+
+$db = new Database();
+$con = $db->conectar();
+
+/* conexion con mascotas*/
+$sql = $con->prepare("SELECT * FROM mascota");
+$sql->execute();
+$resultado_mascotas = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+/* conexion con mascotas*/
+$sql = $con->prepare("SELECT * FROM raza_masct");
+$sql->execute();
+$raza_mascotas = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+/* conexion con usuarios*/
+$sql = $con->prepare("SELECT * FROM usuario");
+$sql->execute();
+$usuarios = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+/* conexion sesion */
+$sql = $con->prepare("SELECT * FROM usuario where idusuario=$usuario");
+$sql->execute();
+$id_usuario = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -6,7 +35,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/perfil.css">
     <link rel="stylesheet" href="../style/style_m.css">
-    <title>Puppy Match</title>
+    <title>Doget</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <!-- Boxicons CDN Link -->
     <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
@@ -17,15 +46,15 @@
 
 </head>
 <body>
-  <div class="sidebar">
+<div class="sidebar">
     <div class="logo-details">
-      <img src="../assets/logo-alt.png" alt="" srcset="" width="20%" class="icon">
-     
-        <div class="logo_name">PuppyMatch</div>
-        <i class='bx bx-menu' id="btn" ></i>
+      <img src="assets/logo-alt.png" alt="" srcset="" width="20%" class="icon" />
+
+      <div class="logo_name">Doget</div>
+      <i class="bx bx-menu" id="btn"></i>
     </div>
     <ul class="nav-list">
-    <li>
+      <li>
         <i class="bx bx-search"></i>
         <input type="text" placeholder="Search..." />
         <span class="tooltip">Buscar</span>
@@ -60,15 +89,25 @@
       </li>
       <li class="profile">
         <div class="profile-details">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Woman_1.jpg/768px-Woman_1.jpg"
+          <?php 
+          
+            foreach ($id_usuario as $id_usuario) {
+            
+          ?>
+          <img src="
+          <?php 
+            echo ruta_usuarios.$id_usuario['img_ruta'];
+          ?>
+          "
             alt="profileImg" />
           <div class="name_job">
-            <div class="name">María Garcia</div>
+            <div class="name"><?php echo $id_usuario['nombres'];?></div>
             <div class="job"></div>
           </div>
+          <?php } ?>
         </div>
         <button class="btn" type="submit">
-          <i class="bx bx-log-out" id="log_out"> </i>
+          <a href="../clases/cerrar.php"><i class="bx bx-log-out" id="log_out"> </i></a>
         </button>
       </li>
     </ul>
@@ -80,7 +119,7 @@
         <div class="col-sm">
          <div class="col-md-10">
           <div class="profile-pic-div">
-            <img src="../assets/user.jpg" id="photo">
+            <img src="assets/default.jpg" id="photo">
             <input type="file" id="file">
             <label for="file" id="uploadBtn">Editar foto</label>
           </div>

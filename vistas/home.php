@@ -1,10 +1,39 @@
+<?php
+require '../config/config.php';
+require '../config/database.php';
+
+$db = new Database();
+$con = $db->conectar();
+
+/* conexion con mascotas*/
+$sql = $con->prepare("SELECT * FROM mascota Except SELECT * FROM mascota WHERE idusuario=$usuario");
+$sql->execute();
+$resultado_mascotas = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+/* conexion con mascotas*/
+$sql = $con->prepare("SELECT * FROM raza_masct");
+$sql->execute();
+$raza_mascotas = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+/* conexion con usuarios*/
+$sql = $con->prepare("SELECT * FROM usuario");
+$sql->execute();
+$usuarios = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+/* conexion sesion */
+$sql = $con->prepare("SELECT * FROM usuario where idusuario=$usuario");
+$sql->execute();
+$id_usuario = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+?>
+
 <!DOCTYPE html>
 <!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
 <html lang="en" dir="ltr">
 
 <head>
   <meta charset="UTF-8" />
-  <title>PuppyMatch</title>
+  <title>Doget</title>
   <link rel="stylesheet" href="../style/home.css" />
   <link rel="stylesheet" href="../style/style.css" />
   <!-- Boxicons CDN Link -->
@@ -21,9 +50,9 @@
   <!-- inicio del menú -->
   <div class="sidebar">
     <div class="logo-details">
-      <img src="../assets/logo-alt.png" alt="" srcset="" width="20%" class="icon" />
+      <img src="assets/logo-alt.png" alt="" srcset="" width="20%" class="icon" />
 
-      <div class="logo_name">PuppyMatch</div>
+      <div class="logo_name">Doget</div>
       <i class="bx bx-menu" id="btn"></i>
     </div>
     <ul class="nav-list">
@@ -62,15 +91,25 @@
       </li>
       <li class="profile">
         <div class="profile-details">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Woman_1.jpg/768px-Woman_1.jpg"
+          <?php 
+          
+            foreach ($id_usuario as $id_usuario) {
+            
+          ?>
+          <img src="
+          <?php 
+            echo ruta_usuarios.$id_usuario['img_ruta'];
+          ?>
+          "
             alt="profileImg" />
           <div class="name_job">
-            <div class="name">María Garcia</div>
+            <div class="name"><?php echo $id_usuario['nombres'];?></div>
             <div class="job"></div>
           </div>
+          <?php } ?>
         </div>
         <button class="btn" type="submit">
-          <i class="bx bx-log-out" id="log_out"> </i>
+          <a href="../clases/cerrar.php"><i class="bx bx-log-out" id="log_out"> </i></a>
         </button>
       </li>
     </ul>
@@ -81,33 +120,53 @@
     <!-- inicio del slide -->
     <div class="slide-container">
       <!-- Inicio de card -->
+      <!-- Inicio de conexion -->
+
+      <?php foreach ($resultado_mascotas as $row) {?>
       <div class="wrapper">
         <div class="clash-card barbarian">
           <div class="clash-card__image">
             <img
-              src="https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/Purina%C2%AE%20Como%20disciplinar%20a%20tu%20gato.jpg?itok=V7Gs6wt3"
+              src="
+              <?php
+                echo ruta_mascotas.$row['img_ruta'];
+              ?>
+              "
               alt="barbarian" />
           </div>
           <div class="clash-card__sexo">
-            Gato Macho
+            <?php if ($row['idSexo_masc']=== "m") {
+              echo "MACHO";
+            } else if ($row['idSexo_masc']=== "h"){
+              echo "HEMBRA";
+            } else{
+              echo "DESCONOCIDO";
+            }
+            ?>
             <!--Tipo y sexo-->
           </div>
-          <div class="clash-card__unit-name">Michi
+          <div class="clash-card__unit-name"><?php echo $row['nombre']; ?>
             <!--Nombre-->
           </div>
           <div class="clash-card__unit-description">
             <div class="row">
               <div class="col-md-12">
                 <label class="form-label">Acerca de mi: </label>
-                <p>Soy un gato muy cariñoso.</p>
+                <p><?php echo $row['acerca_de_mi']; ?></p>
               </div>
               <div class="col-md-6">
                 <label class="form-label">Edad: </label>
-                <p>6 meses</p>
+                <p><?php echo $row['edad']; ?></p>
               </div>
               <div class="col-md-6">
                 <label class="form-label">Raza: </label>
-                <p>Desconocido</p>
+                <p><?php
+                  foreach ($raza_mascotas as $raza) {
+                    if ($row['idraza_masct'] === $raza['idraza_masct']) {
+                      echo $raza['raza_masct'];
+                    }
+                  }
+                ?></p>
               </div>
             </div>
           </div>
@@ -116,140 +175,22 @@
               <div class="one-third">
                 <a name="" id="" class="btn btn-primario" href="#" role="button"><i
                     class='bx bxs-bookmark-heart'></i></a>
-                <a name="" id="" class="btn btn-success" href="#" role="button"><i class='bx bxl-whatsapp'></i></a>
+                <a name="" id="" class="btn btn-success" href="<?php 
+                  foreach ($usuarios as $lista_usuarios) {
+                    if ($row['idusuario'] === $lista_usuarios['idusuario']) {
+                      echo ruta_whatsapp.$lista_usuarios['telefono'];
+                    }
+                  }
+                ?>" role="button"><i class='bx bxl-whatsapp'></i></a>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <?php }?>
+      <!-- Fin de conexion -->
       <!-- Fin de card -->
-      <!-- Inicio de card -->
-      <div class="wrapper">
-        <div class="clash-card barbarian">
-          <div class="clash-card__image">
-            <img
-              src="https://fotografias.lasexta.com/clipping/cmsimages02/2019/01/25/DB41B993-B4C4-4E95-8B01-C445B8544E8E/98.jpg?crop=4156,2338,x0,y218&width=1900&height=1069&optimize=high&format=webply"
-              alt="barbarian" />
-          </div>
-          <div class="clash-card__sexo">
-            Gato Macho
-            <!--Tipo y sexo-->
-          </div>
-          <div class="clash-card__unit-name">Michi
-            <!--Nombre-->
-          </div>
-          <div class="clash-card__unit-description">
-            <div class="row">
-              <div class="col-md-12">
-                <label class="form-label">Acerca de mi: </label>
-                <p>Soy un gato muy cariñoso.</p>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Edad: </label>
-                <p>6 meses</p>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Raza: </label>
-                <p>Desconocido</p>
-              </div>
-            </div>
-          </div>
-          <div class="clash-card__unit-stats clash-card__unit-stats--barbarian clearfix">
-            <div class="row">
-              <div class="one-third">
-                <a name="" id="" class="btn btn-primario" href="#" role="button"><i
-                    class='bx bxs-bookmark-heart'></i></a>
-                <a name="" id="" class="btn btn-success" href="#" role="button"><i class='bx bxl-whatsapp'></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Fin de card -->
-      <!-- Inicio de card -->
-      <div class="wrapper">
-        <div class="clash-card barbarian">
-          <div class="clash-card__image">
-            <img src="https://static.dw.com/image/58956274_303.jpg" alt="barbarian" />
-          </div>
-          <div class="clash-card__sexo">
-            Gato Macho
-            <!--Tipo y sexo-->
-          </div>
-          <div class="clash-card__unit-name">Michi
-            <!--Nombre-->
-          </div>
-          <div class="clash-card__unit-description">
-            <div class="row">
-              <div class="col-md-12">
-                <label class="form-label">Acerca de mi: </label>
-                <p>Soy un gato muy cariñoso.</p>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Edad: </label>
-                <p>6 meses</p>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Raza: </label>
-                <p>Desconocido</p>
-              </div>
-            </div>
-          </div>
-          <div class="clash-card__unit-stats clash-card__unit-stats--barbarian clearfix">
-            <div class="row">
-              <div class="one-third">
-                <a name="" id="" class="btn btn-primario" href="#" role="button"><i
-                    class='bx bxs-bookmark-heart'></i></a>
-                <a name="" id="" class="btn btn-success" href="#" role="button"><i class='bx bxl-whatsapp'></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Fin de card -->
-      <!-- Inicio de card -->
-      <div class="wrapper">
-        <div class="clash-card barbarian">
-          <div class="clash-card__image">
-            <img
-              src="https://www.fundacion-affinity.org/sites/default/files/el-gato-necesita-tener-acceso-al-exterior.jpg"
-              alt="barbarian" />
-          </div>
-          <div class="clash-card__sexo">
-            Gato Macho
-            <!--Tipo y sexo-->
-          </div>
-          <div class="clash-card__unit-name">Michi
-            <!--Nombre-->
-          </div>
-          <div class="clash-card__unit-description">
-            <div class="row">
-              <div class="col-md-12">
-                <label class="form-label">Acerca de mi: </label>
-                <p>Soy un gato muy cariñoso.</p>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Edad: </label>
-                <p>6 meses</p>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Raza: </label>
-                <p>Desconocido</p>
-              </div>
-            </div>
-          </div>
-          <div class="clash-card__unit-stats clash-card__unit-stats--barbarian clearfix">
-            <div class="row">
-              <div class="one-third">
-                <a name="" id="" class="btn btn-primario" href="#" role="button"><i
-                    class='bx bxs-bookmark-heart'></i></a>
-                <a name="" id="" class="btn btn-success" href="#" role="button"><i class='bx bxl-whatsapp'></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Fin de card -->
+      
       <!-- fin del slide-->
 
   </section>

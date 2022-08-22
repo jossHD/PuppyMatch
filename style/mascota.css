@@ -382,20 +382,20 @@
  /*CARDS MASCOTAS GUARDADAS*/
  .tarjeta-guardadas {
   display: grid!important;
-  grid-template-columns: 200px;
-  grid-template-rows: 250px 140px 60px;
-  grid-template-areas: "image" "text" "stats";
-
-  background: white;
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
-  text-align: center;
+    grid-template-columns: 200px;
+    grid-template-rows: 250px 140px 60px;
+    grid-template-areas: "image" "text" "stats";
   
-
-  transition: 0.5s ease;
-  cursor: pointer;
-  margin:15px;
-  width: 260px;
-  border-radius: 10px;
+    background: white;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    text-align: center;
+    
+  
+    transition: 0.5s ease;
+    cursor: pointer;
+    margin:15px;
+    width: 200px;
+    border-radius: 10px;
 }
  
   
