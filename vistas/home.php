@@ -25,6 +25,10 @@ $sql = $con->prepare("SELECT * FROM usuario where idusuario=$usuario");
 $sql->execute();
 $id_usuario = $sql->fetchAll(PDO::FETCH_ASSOC);
 
+if ($usuario === 0) {
+  header('Location:login.php');
+}
+
 ?>
 
 <!DOCTYPE html>
