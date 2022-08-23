@@ -1,6 +1,6 @@
 
 function redireccionarPagina() {
-	window.location.href = "http://localhost/doGet/PuppyMatch/vistas/perfil.php";
+	window.location.href = "http://localhost/doGet/PuppyMatch/vistas/login.php";
 	}
 
 var agregar_perfil = document.getElementById('agregar_perfil');
