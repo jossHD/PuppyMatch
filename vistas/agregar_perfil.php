@@ -60,28 +60,28 @@ $id_usuario = $sql->fetchAll(PDO::FETCH_ASSOC);
         <span class="tooltip">Buscar</span>
       </li>
       <li>
-        <a href="home.php">
+        <a type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
           <i class="bx bx-heart"></i>
           <span class="links_name">Match</span>
         </a>
         <span class="tooltip">Match</span>
       </li>
       <li>
-        <a href="mascotas_guardadas.php">
+        <a type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
           <i class="bx bx-bookmark-heart"></i>
           <span class="links_name">Guardados</span>
         </a>
         <span class="tooltip">Guardados</span>
       </li>
       <li>
-        <a href="mascota.php">
+        <a type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
           <i class="bx bxs-dog"></i>
           <span class="links_name">Mis Mascotas</span>
         </a>
         <span class="tooltip">Mis Mascotas</span>
       </li>
       <li>
-        <a href="perfil.php">
+        <a type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
           <i class="bx bx-cog"></i>
           <span class="links_name">Configuración</span>
         </a>
@@ -89,22 +89,10 @@ $id_usuario = $sql->fetchAll(PDO::FETCH_ASSOC);
       </li>
       <li class="profile">
         <div class="profile-details">
-          <?php 
-          
-            foreach ($id_usuario as $id_usuario) {
-            
-          ?>
-          <img src="
-          <?php 
-            echo ruta_usuarios.$id_usuario['img_ruta'];
-          ?>
-          "
-            alt="profileImg" />
           <div class="name_job">
             <div class="name"><?php echo $id_usuario['nombres'];?></div>
             <div class="job"></div>
           </div>
-          <?php } ?>
         </div>
         <button class="btn" type="submit">
           <a href="../clases/cerrar.php"><i class="bx bx-log-out" id="log_out"> </i></a>
@@ -112,14 +100,31 @@ $id_usuario = $sql->fetchAll(PDO::FETCH_ASSOC);
       </li>
     </ul>
   </div>
+  <!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Aún no has terminado.</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        COMPLETA EL REGISTRO
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primario" data-bs-dismiss="modal">Entiendo</button>
+      </div>
+    </div>
+  </div>
+</div>
  <section class="perfil-section">
   <div class="perfil">
     <div class="titulos"> Mi Perfil</div>
-      <form id="editar_perfil" enctype="multipart/form-data" class="row g-3 needs-validation justify-content-md-center" novalidate>
+      <form id="agregar_perfil" enctype="multipart/form-data" class="row g-3 needs-validation justify-content-md-center" novalidate>
         <div class="col-sm">
          <div class="col-md-10">
           <div class="profile-pic-div">
-            <img src="<?php echo ruta_usuarios.$id_usuario['img_ruta'] ?>" id="photo">
+            <img src="<?php echo ruta_usuarios."default.jpg" ?>" id="photo">
             <input name="file" type="file" id="file">
             <label for="file" id="uploadBtn">Editar foto</label>
           </div>
@@ -128,7 +133,7 @@ $id_usuario = $sql->fetchAll(PDO::FETCH_ASSOC);
         <div class="col-sm ">
         <div class="col-md-10 pb-2">
           <label for="validationCustom01" class="form-label">Nombres:</label>
-          <input name="nombres" type="text" class="form-control" id="validationCustom01" value="<?php echo $id_usuario['nombres'] ?>" required>
+          <input name="nombres" type="text" class="form-control" id="validationCustom01" value="" required>
           <div class="valid-feedback">
             correcto!
           </div>
@@ -138,7 +143,7 @@ $id_usuario = $sql->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <div class="col-md-10 pb-2">
           <label for="validationCustom02" class="form-label">Apellidos:</label>
-          <input name="apellidos" type="text" class="form-control" id="validationCustom02" value="<?php echo $id_usuario['apellidos'] ?>" required>
+          <input name="apellidos" type="text" class="form-control" id="validationCustom02" value="" required>
           <div class="valid-feedback">
             Correcto!
           </div>
@@ -148,11 +153,11 @@ $id_usuario = $sql->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <div class="col-md-10 pb-2">
           <label for="validationCustom03" class="form-label">Teléfono:</label>
-          <input name="telefono" type="tel" class="form-control" id="validationCustom03" value="<?php echo $id_usuario['telefono'] ?>">
+          <input name="telefono" type="tel" class="form-control" id="validationCustom03" value="">
         </div>
         <div class="col-md-10 pb-2">              
           <label for="validationCustom04" class="form-label">Correo:</label>
-          <input disabled type="email" class="form-control" id="validationCustom04" value="<?php echo $id_usuario['correo'] ?>" required>
+          <input  name="correo" type="email" class="form-control" id="validationCustom04" value="" required>
           <div class="valid-feedback">
             Correcto!
           </div>
@@ -162,7 +167,7 @@ $id_usuario = $sql->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <div class="col-md-10 pb-2">
           <label for="validationCustom05" class="form-label">Contraseña:</label>
-          <input name="contraseña" type="text" class="form-control" id="validationCustom05" value="<?php echo $id_usuario['contraseña'] ?>" required>
+          <input name="contraseña" type="text" class="form-control" id="validationCustom05" value="" required>
           <div class="valid-feedback">
             Correcto!
           </div>
@@ -174,14 +179,14 @@ $id_usuario = $sql->fetchAll(PDO::FETCH_ASSOC);
       <div class="col-sm">
         <div class="col-md-10 pb-2">
           <label for="validationCustom07" class="form-label">Dirección:</label>
-          <input name="direccion" type="text" class="form-control" id="validationCustom07" value="<?php echo $id_usuario['direccion'] ?>" required>
+          <input name="direccion" type="text" class="form-control" id="validationCustom07" value="" required>
           <div class="valid-feedback">
             Looks good!
           </div>
         </div>
         <div class="col-md-10 pb-2">
           <label for="validationCustom07" class="form-label">Acerca de mi:</label>
-            <textarea name="acerca_de_mi" class="form-control" id="validationCustom07" rows="4"><?php echo $id_usuario['acerca_de_mi'] ?></textarea>
+            <textarea name="acerca_de_mi" class="form-control" id="validationCustom07" rows="4"></textarea>
         </div>
         <div id="respuesta" class="col-md-10 pb-4">
         </div>
@@ -194,13 +199,14 @@ $id_usuario = $sql->fetchAll(PDO::FETCH_ASSOC);
       </form>
     </div>
 
+
 </section> 
 
       <footer>
 
       </footer>  
     <script src="../scripts/perfil.js"></script> 
-    <script src="../scripts/editar_perfil.js"></script> 
+    <script src="../scripts/agregar_perfil.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
     </script>
 </body>

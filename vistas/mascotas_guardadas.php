@@ -173,8 +173,8 @@ $id_usuario = $sql->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <div class="row">
           <div class="one-third">
-            <a name="" id="" class="btn btn-danger" style="margin-right:5px ;" href="#" role="button"><i class='bx bxs-trash-alt'></i></a>
-            <a name="" id="" class="btn btn-success" style="font-size: 16px;" href="#" role="button"><i class='bx bxl-whatsapp'></i></a>
+            <a name="" id="" class="btn btn-danger" style="margin-right:5px ;" href="../clases/eliminar.php?eliminar=likes&idlike=<?php echo $like['idlike']?>" role="button"><i class='bx bxs-trash-alt'></i></a>
+            <a name="" id="" class="btn btn-success" style="font-size: 16px;" href="<?php echo ruta_whatsapp."983456234" ?>"><i class='bx bxl-whatsapp'></i></a>
           </div>
         </div>
       

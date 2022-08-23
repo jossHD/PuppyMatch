@@ -173,7 +173,7 @@ $id_usuario = $sql->fetchAll(PDO::FETCH_ASSOC);
           <div class="clash-card__unit-stats clash-card__unit-stats--barbarian clearfix">
             <div class="row">
               <div class="one-third">
-                <a name="" id="" class="btn btn-primario" href="#" role="button"><i
+                <a name="" id="" class="btn btn-primario" href="../clases/agregar_match.php?agregar=likes&idmascota=<?php echo $row['idmascota'];?>&idusuario=<?php echo $usuario;?>" role="button"><i
                     class='bx bxs-bookmark-heart'></i></a>
                 <a name="" id="" class="btn btn-success" href="<?php 
                   foreach ($usuarios as $lista_usuarios) {

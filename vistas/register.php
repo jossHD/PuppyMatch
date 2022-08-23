@@ -16,15 +16,15 @@
                 
               </div>
               <div class="col">
-                <form class="row g-3 needs-validation justify-content-around" novalidate>
+                <form id="validar_contraseña" class="row g-3 needs-validation justify-content-around" novalidate>
                     <div class="col-md-12 text-center">
-                        <img src="../assets/logo.png" alt="" srcset="" class="logo pb-3">
+                        <img src="assets/logo.png" alt="" srcset="" class="logo pb-3">
                         <h4><b>Registrarse</b></h2>
                     </div>
                     <div class="col-md-8 ">
 
-                      <label for="validationCustom01" class="form-label">Correo</label>
-                      <input type="email" class="form-control" id="validationCustom01" value="" required>
+                      <label  class="form-label">Correo</label>
+                      <input name="correo" type="email" class="form-control"  value="" required>
                       <div class="valid-feedback">
                         Correcto!
                       </div>
@@ -33,8 +33,8 @@
                       </div>
                     </div>
                     <div class="col-md-8">
-                      <label for="validationCustom02" class="form-label">Contraseña</label>
-                      <input type="password" class="form-control" id="validationCustom02" value="" required>
+                      <label  class="form-label">Contraseña</label>
+                      <input name="contraseña" type="password" class="form-control" value="" required>
                       <div class="valid-feedback">
                         Contrseña segura!
                       </div>
@@ -43,14 +43,16 @@
                       </div>
                     </div>
                     <div class="col-md-8">
-                      <label for="validationCustom02" class="form-label">Repetir contraseña</label>
-                      <input type="password" class="form-control" id="validationCustom02" value="" required>
+                      <label  class="form-label">Repetir contraseña</label>
+                      <input name="confirmarcontraseña" type="password" class="form-control"  value="" required>
                       <div class="valid-feedback">
                         Contrseña segura!
                       </div>
                       <div class="invalid-feedback">
                         Ingresa una contraseña valida
                       </div>
+                    </div>
+                    <div id="respuesta" class="col-md-8">
                     </div>
                   
                     <div class="col-12 text-center">
@@ -62,7 +64,6 @@
                   </form>
               </div>
             
-              
             </div>
         </div>
     </section>
@@ -71,7 +72,7 @@
         
     </footer>
     <!-- JavaScript Bundle with Popper -->
-    <script src="../scripts/login.js"></script>
+    <script src="../scripts/validar_contraseña.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
     </script>
 </body>

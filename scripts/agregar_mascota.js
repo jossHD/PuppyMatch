@@ -38,7 +38,7 @@ agregar_mascota.addEventListener('submit', function(w){
 			}else if(data === 'correcto'){
 				respuesta.innerHTML = `
 					<div class="alert alert-success alert-dismissible fade show" role="alert" style="width:100%!important;">
-						<strong>SE AGREGÓ UN PRODUCTO.</strong>
+						<strong>SE AGREGÓ UNA MASCOTA.</strong>
 						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 					</div>
 				`

@@ -37,7 +37,7 @@ $id_usuario = $sql->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="../style/style.css">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <title>PuppyMatch</title>
+    <title>Doget</title>
 </head>
 <body>
     <section class="img-form">
@@ -45,7 +45,7 @@ $id_usuario = $sql->fetchAll(PDO::FETCH_ASSOC);
               <div class="col">
                 <form id="inicia_sesion" class="row g-3 needs-validation justify-content-around" novalidate>
                     <div class="col-md-12 text-center">
-                        <img src="../assets/logo.png" alt="" srcset="" class="logo pb-3">
+                        <img src="assets/logo.png" alt="" srcset="" class="logo pb-3">
                         <h4><b>Iniciar Sesión</b></h2>
                     </div>
                     <div class="col-md-8 ">
@@ -77,7 +77,7 @@ $id_usuario = $sql->fetchAll(PDO::FETCH_ASSOC);
                       <button class="btn btn-primario" name="submit" type="submit">Ingresar</button>
                     </div>
                     <div class="col-12 text-center">
-                        <a class="btn btn-secundario" href="register.php">Registrarse</a>
+                        <a class="btn btn-secundario" href="agregar_perfil.php">Registrarse</a>
                       </div>
                   </form>
               </div>

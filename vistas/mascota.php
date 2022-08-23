@@ -167,7 +167,7 @@ $id_usuario = $sql->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <div class="row">
           <div class="one-third">
-            <a name="" id="" class="btn btn-danger" style="margin-right:5px ;" href="#" role="button"><i class='bx bxs-trash-alt'></i></a>
+            <a name="" id="" class="btn btn-danger" style="margin-right:5px ;" href="../clases/eliminar.php?eliminar=mascota&idmascota=<?php echo $dato['idmascota']?>" role="button"><i class='bx bxs-trash-alt'></i></a>
             <a name="" id="" class="btn btn-warning" href="editarMascota.php?id_mascota=<?php echo $dato['idmascota'];?>" role="button"><i class='bx bxs-edit-alt'></i></a>
           </div>
         </div>
